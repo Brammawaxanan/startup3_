@@ -1,0 +1,216 @@
+/* =======================
+   2. Navbar Styles
+   ======================= */
+.navbar {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  text-align: center;
+  z-index: 20;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.navbar ul li a {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.navbar ul li :active{
+  text-decoration: underline;
+}
+.navbar ul li a:hover {
+  opacity: 0.8;
+}
+.navbar .icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+/* =======================
+   3. Hero Section
+   ======================= */
+.hero {
+  background-image: url("../images/hero-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.hero-slider-container {
+  margin-top: 500px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =======================
+   4. Hero Slide Content
+   ======================= */
+.hero-content {
+  padding: 40px 20px 60px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+
+}
+
+.hero-content h5 {
+  font-size: 20px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.hero-content button {
+  padding: 12px 32px;
+  font-size: 16px;
+  background: #482BE7;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+  box-shadow: 0 2px 12px rgba(106,0,244,0.14);
+}
+.hero-content button:hover {
+  background: #3e00a5;
+}
+
+/* =======================
+   5. Hero Slider Logic
+   ======================= */
+.hero-slide {
+  display: none;
+  animation: fadeIn 0.6s;
+  transition: opacity 0.3s;
+}
+.hero-slide.active {
+  display: block;
+}
+.hero-slide.inactive-left,
+.hero-slide.inactive-right {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* =======================
+   6. Slider Navigation Arrows
+   ======================= */
+.hero-slider-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  pointer-events: none;
+}
+.hero-slider-arrow {
+  pointer-events: all;
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 30px;
+  width: 48px;
+  height: 48px;
+  
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 0 18px;
+  opacity: 0.9;
+}
+.hero-slider-arrow:hover {
+  size: 35px;
+  text-decoration: bold;
+}
+
+/* =======================
+   7. Slider Dots
+   ======================= */
+.hero-slider-dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.hero-slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  border: 1.5px solid #fff;
+}
+.hero-slider-dot.active {
+  opacity: 1;
+  background: #ffffff;
+  transform: scale(1.18);
+}
+
+/* =======================
+   8. Responsive Design
+   ======================= */
+@media (max-width: 900px) {
+  .hero-content h1 {
+    font-size: 36px;
+  }
+  .hero-content {
+    padding: 28px 8px 40px 8px;
+  }
+}
+@media (max-width: 600px) {
+  .navbar ul {
+    gap: 18px;
+  }
+  .hero-content h1 {
+    font-size: 28px;
+  }
+  .hero-content p {
+    font-size: 15px;
+  }
+  .hero-slider-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+}

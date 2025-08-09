@@ -1,0 +1,28 @@
+/* ========== style ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #2d0f9e;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Add a small gap between every major section */
+section {
+  margin-bottom: 40px;
+}
+
+/* Optional: for footer and last section, reduce extra space */
+footer {
+  margin-top: 40px;
+}
+
